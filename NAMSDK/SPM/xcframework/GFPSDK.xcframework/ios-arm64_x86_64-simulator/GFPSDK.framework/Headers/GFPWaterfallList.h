@@ -23,8 +23,6 @@
 @class GFPAdMetaData;
 @class GFPError;
 @class GFPAdHTML;
-@class GFPAdSkipData;
-@class GFPAdSkipInfo;
 @class GFPNativeAdInfo;
 @class GFPWaterfallDedup;
 @class GFPSKAdNetworkInfo;
@@ -74,7 +72,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic, strong, nullable) NSString *requestID;
 @property (readonly, nonatomic, strong, nullable) NSString *adUnit;
 @property (readonly, nonatomic, strong, nullable) GFPAdEvent *eventTracking;
-@property (readonly, nonatomic, strong, nullable) GFPAdSkipData *skipData;
 @property (readonly, nonatomic, strong, nullable) GFPVastAdSkipData *vastSkipData;
 @property (readonly, nonatomic, strong, nullable) NSArray<GFPAd *> *ads;
 
@@ -191,7 +188,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic, strong, nullable) NSString *layoutType;
 @property (readwrite, nonatomic, strong, nullable) NSString *creativeType;
 @property (readonly, nonatomic, strong, nullable) NSNumber *vastMaxRedirect;
-@property (readonly, nonatomic, strong, nullable) GFPAdSkipInfo *skipInfo;
 @property (readonly, nonatomic, strong, nullable) GFPVastAdSkipInfo *vastSkipInfo;
 @property (readonly, nonatomic, strong, nullable) GFPAdInfoEvent *eventTracking;
 @property (readonly, nonatomic, strong, nullable) GFPAdInfo *adInfo;
@@ -199,7 +195,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 
 - (instancetype _Nullable)initWithDictionary:(NSDictionary *_Nullable)adDict
-                                        data:(GFPAdSkipData * _Nullable)data
                                 vastSkipData:(GFPVastAdSkipData * _Nullable)vastSkipData
                                isPredownload:(BOOL)isPredownload NS_DESIGNATED_INITIALIZER;
 
@@ -245,7 +240,6 @@ NS_ASSUME_NONNULL_BEGIN
     
 - (instancetype)initWithDictionary:(NSDictionary *)adInfoDict
                       vastSkipInfo:(GFPVastAdSkipInfo *)vastSkipInfo
-                          skipInfo:(GFPAdSkipInfo *)skipInfo
                      isPredownload:(BOOL)isPredownload NS_DESIGNATED_INITIALIZER;
 
 @end

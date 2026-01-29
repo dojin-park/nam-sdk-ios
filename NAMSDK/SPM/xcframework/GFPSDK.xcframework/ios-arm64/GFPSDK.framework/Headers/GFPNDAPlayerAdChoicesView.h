@@ -34,9 +34,6 @@ static const CGFloat kRewardedPlayerAdChociesWidthHeight = 16.0;
 - (instancetype)initWithCoder:(NSCoder *)coder NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 
-- (instancetype)initWithFrame:(CGRect)aFrame
-                     iconList:(NSArray<Icon *> *)aIconList
-                 adChoiceInfo:(nullable GFPAdChoiceInfo *)adChoiceInfo NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)initWithFrame:(CGRect)aFrame
                   nasIconList:(NSArray<GFPVastIcon *> *)aIconList

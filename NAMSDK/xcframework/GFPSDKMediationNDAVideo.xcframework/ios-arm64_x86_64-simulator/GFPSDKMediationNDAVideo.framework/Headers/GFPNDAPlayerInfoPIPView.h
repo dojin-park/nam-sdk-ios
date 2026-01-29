@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "GFPNDAPlayerInfoView.h"
 
+@import NaverAdsServices;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class GFPNDAPlayerInfoPIPView;
@@ -24,7 +26,7 @@ typedef NS_ENUM(NSInteger, GFPNDAPlayerInfoPIPViewType) {
 @protocol GFPNDAPlayerPIPViewInfoDelegate <NSObject>
 
 - (void)infoView:(GFPNDAPlayerInfoPIPView *)aInfoView didSkipTapped:(UIButton *)aSender;
-- (void)infoView:(GFPNDAPlayerInfoPIPView *)aInfoView didMoreTapped:(NSString *)aURL;
+- (void)infoView:(GFPNDAPlayerInfoPIPView *)aInfoView didMoreTapped:(NSString *)clickThroughURL;
 
 @end
 
@@ -39,7 +41,9 @@ typedef NS_ENUM(NSInteger, GFPNDAPlayerInfoPIPViewType) {
 - (instancetype)initWithCoder:(NSCoder *)coder NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 
-- (instancetype)initWithFrame:(CGRect)frame controlInfo:(GFPNDAVastControlInfo *)aControlInfo clickThrough:(NSString *)clickThrough NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithFrame:(CGRect)frame
+               nasControlInfo:(GFPNASVastControlInfo *)aControlInfo
+              nasClickThrough:(GFPVastImpression *)clickThrough NS_DESIGNATED_INITIALIZER;
 
 - (void)updateCurrentTime:(NSTimeInterval)aCurrentTime;
 

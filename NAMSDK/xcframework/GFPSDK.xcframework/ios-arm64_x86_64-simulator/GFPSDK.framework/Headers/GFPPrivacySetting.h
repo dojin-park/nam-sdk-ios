@@ -23,6 +23,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (class, nonatomic, strong, readonly, nullable) NSString *IAB_USPString;
 
+/**
+ * for GPP
+ */
+@property (class, nonatomic, strong, readonly, nullable) NSString *IAB_gppHDRString;
+@property (class, nonatomic, strong, readonly, nullable) NSString *IAB_gppSectionId_GFPParam;
+@property (class, nonatomic, assign, readonly) BOOL isCompliedGPP;
+
+
 @property (nonatomic, assign, readonly) BOOL isPrivacyProtection;
 
 /**

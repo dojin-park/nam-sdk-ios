@@ -12,7 +12,6 @@
 #import "GFPNativeAdInfoProtocol.h"
 #import "GFPNativeAdRenderingSetting.h"
 #import "GFPNDAAdMuteView.h"
-#import "GFPAdSkipInfo.h"
 
 @class GFPAdChoiceInfo;
 @class GFPSKAdNetworkInfo;
@@ -48,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly, assign) GFPNDAMediaViewType type;
 @property (nonatomic, readonly, strong, nullable) GFPNDAMediaViewRenderInfo *renderInfo;
-@property (nonatomic, readonly, strong, nullable) GFPAdSkipInfo *skipInfo;
+@property (nonatomic, readonly, strong, nullable) GFPVastAdSkipInfo *nasSkipInfo;
 
 @property (nonatomic, readonly, strong) id <GFPNativeAdInfoSourcePresentable, GFPNativeAdInfoExtensionPresentable> info;
 @property (nonatomic, readonly, strong) GFPNativeAdInfo *nativeAdInfo;

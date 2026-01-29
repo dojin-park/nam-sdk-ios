@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "GFPStaticResource.h"
-
+@import NaverAdsServices;
 
 @class UIButton;
 
@@ -20,22 +19,22 @@
 
 /**
  * Remind 광고가 사라지면 호출됩니다. (상황 : Duration 시간이 지난 이후,  가로 세로 화면 전환시, Close 버튼 클릭 시).
- * @param type GFPRemindType
+ * @param type GFPVastRemindType
 */
-- (void)nonLinearDidHide:(GFPRemindType)type;
+- (void)nonLinearDidHide:(GFPVastRemindType)type;
 
 
 /**
  * Remind 광고 클릭시 호출됩니다.
- * @param type GFPRemindType
+ * @param type GFPVastRemindType
 */
-- (void)nonLinearWasClicked:(GFPRemindType)type;
+- (void)nonLinearWasClicked:(GFPVastRemindType)type;
 
 
 /**
  * Remind 광고가 사용자에게 보여질 경우 호출됩니다..
  * @param type GFPRemindType
 */
-- (void)nonLinearOnActiveImpression:(GFPRemindType)type;
+- (void)nonLinearOnActiveImpression:(GFPVastRemindType)type;
 
 @end

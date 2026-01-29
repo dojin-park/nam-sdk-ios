@@ -15,11 +15,11 @@
 #import "GFPNDAPlayerDelegate.h"
 #import "Swift-Enum.h"
 
+@import NaverAdsServices;
 
 @class GFPNDAVastMediaFile;
 @class GFPVideoAdQoePlayerInfo;
 @class GFPError;
-@class GFPLoudnessNormalization;
 @class AVPlayer;
 @class AVPlayerItemAccessLog;
 @class AVPlayerItem;
@@ -46,8 +46,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) GFPNDAAVPlayerView *playerLayerView;
 @property (nonatomic, assign) CMTime duration;
 
-- (instancetype)initWithFrame:(CGRect)frame mediaURL:(nonnull NSURL *)aURL loudness:(GFPLoudnessNormalization * _Nullable)aLoudness;
-- (instancetype)initRepeatPlayerWithFrame:(CGRect)frame mediaURL:(nonnull NSURL *)aURL loudness:(GFPLoudnessNormalization * _Nullable)aLoudness;
+- (instancetype)initWithFrame:(CGRect)frame
+                     mediaURL:(nonnull NSURL *)aURL
+                     loudness:(GFPNASLoudnessNormalization * _Nullable)aLoudness;
+
 
 - (void)start;
 - (void)pause;

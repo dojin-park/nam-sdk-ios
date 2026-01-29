@@ -19,12 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GFPNDAVideoEventReporter : NSObject
 
-@property (readonly, nonatomic, strong) GFPVastEvent *vastEvent;
 @property (readonly, nonatomic, strong) GFPVastTrackingInfo *nasVastEvent;
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithVastEvent:(GFPVastEvent *)aVastEvent logId:(NSUUID *)logId;
-
 - (instancetype)initWithNASVastEventInfo:(GFPVastTrackingInfo * _Nullable)aVastEvent logId:(NSUUID *)logId;
 
 - (void)reportProgressWithCurrentTime:(double)currentTime;
@@ -34,6 +31,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)reportSkip;
 - (void)reportClick;
 - (void)reportError;
+- (void)reportErrorWith:(NSInteger)errorCode;
+- (void)reportClose;
+- (void)reportCloseLinear;
 
 - (void)reportPauseWith:(BOOL)isUserAction;
 - (void)reportResumeWith:(BOOL)isUserAction;

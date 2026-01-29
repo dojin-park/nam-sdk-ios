@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@import NaverAdsServices;
 
 @class GFPNDAVastControlInfo;
 @class GFPNDAPlayerInfoView;
@@ -18,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol GFPNDAPlayerViewInfoDelegate <NSObject>
 
 - (void)infoView:(GFPNDAPlayerInfoView *)aInfoView didSkipTapped:(UIButton *)aSender;
-- (void)infoView:(GFPNDAPlayerInfoView *)aInfoView didPostAdTapped:(NSString *)aURL;
+- (void)infoView:(GFPNDAPlayerInfoView *)aInfoView didPostAdTapped:(NSString *)clickThrough;
 - (void)infoView:(GFPNDAPlayerInfoView *)aInfoView didShowSkipButton:(UIButton *)aSender;
 
 @end
@@ -45,7 +46,7 @@ static const CGFloat kPlayerInfoViewMaxHeight = 56.0;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 
 - (instancetype)initWithFrame:(CGRect)frame 
-                  controlInfo:(GFPNDAVastControlInfo *)aControlInfo
+                  controlInfo:(GFPNASVastControlInfo *)nasControlInfo
              renderingSetting:(nullable GFPVideoAdRenderingSetting *)renderingSetting
                         logId:(NSUUID *)logId NS_DESIGNATED_INITIALIZER;
 

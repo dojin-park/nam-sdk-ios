@@ -26,7 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 @class GFPAdEventObject;
 @class GFPNDAMediaView;
 @class GFPNDAMediaViewRenderInfo;
-@class GFPAdSkipInfo;
 @class GFPError;
 @class GFPAdChoicesData;
 @class GFPNDANativeLandingTapGesture;
@@ -107,7 +106,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithNativeAdInfo:(GFPNativeAdInfo *)nativeAdInfo
                      skAdNetworkInfo:(GFPSKAdNetworkInfo *)skNetworkInfo
-                            skipInfo:(GFPAdSkipInfo *)skipInfo
+                         nasSkipInfo:(GFPVastAdSkipInfo *)skipInfo
                         adChoiceInfo:(GFPAdChoiceInfo *)adChoiceInfo
                      vastMaxRedirect:(NSNumber *)vastMaxRedirect
                              context:(GFPNativeContext *)context

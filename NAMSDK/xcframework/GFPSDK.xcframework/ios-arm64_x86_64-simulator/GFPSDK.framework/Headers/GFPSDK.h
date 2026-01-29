@@ -44,11 +44,8 @@ FOUNDATION_EXPORT const unsigned char GFPSDKVersionString[];
 #import <GFPSDK/GFPAdScheduleParam.h>
 #import <GFPSDK/GFPAdvertiseParams.h>
 #import <GFPSDK/GFPVideoAdInfo.h>
-#import <GFPSDK/GFPLoudnessNormalization.h>
 
 #import <GFPSDK/GFPRemindAd.h>
-#import <GFPSDK/GFPCreativeExtension.h>
-#import <GFPSDK/GFPStaticResource.h>
 
 #import <GFPSDK/GFPAdBannerOptions.h>
 #import <GFPSDK/GFPAdLoader.h>

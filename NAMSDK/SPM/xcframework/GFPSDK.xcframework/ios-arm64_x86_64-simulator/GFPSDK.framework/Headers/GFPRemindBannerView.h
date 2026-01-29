@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GFPRemindBannerView : GFPNonLinearAdView
 
+- (instancetype)initWithFrame:(CGRect)frame remindAd:(GFPRemindAd *)aRemindAd logId:(NSUUID *)logId;
+
 @end
 
 NS_ASSUME_NONNULL_END

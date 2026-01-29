@@ -362,8 +362,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 
 
-SWIFT_CLASS_NAMED("GFPRendererShoppingNDAView")
-@interface GFPRendererShoppingNDAView : UIView
+SWIFT_CLASS_NAMED("GFPRendererShoppingNDASpecialDAView")
+@interface GFPRendererShoppingNDASpecialDAView : UIView
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull extraKeyDiscount;)
 + (NSString * _Nonnull)extraKeyDiscount SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull extraKeyLabelBadge;)
@@ -382,7 +382,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 @class GFPNativeBaseRenderingSetting;
 
-@interface GFPRendererShoppingNDAView (SWIFT_EXTENSION(GFPSDKAdRenderer)) <GFPNativeTemplateViewProtocol>
+@interface GFPRendererShoppingNDASpecialDAView (SWIFT_EXTENSION(GFPSDKAdRenderer)) <GFPNativeTemplateViewProtocol>
 - (UILabel * _Nullable)titleAssetView SWIFT_WARN_UNUSED_RESULT;
 - (UILabel * _Nullable)advertiseAssetView SWIFT_WARN_UNUSED_RESULT;
 - (GFPMediaView * _Nullable)mediaContainerView SWIFT_WARN_UNUSED_RESULT;
@@ -394,6 +394,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (CGFloat)estimateHeight SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)scaleRatio SWIFT_WARN_UNUSED_RESULT;
 - (void)updateRenderingSetting:(GFPNativeBaseRenderingSetting * _Nullable)renderingSetting;
+/// Starts the gradient light effect animation on media view.
+/// Animation spec: left-to-right x-axis movement, ease-in-out, duration 1200ms,
+/// repeat once after 1000ms delay from initial animation completion.
+- (void)startGradientAnimation;
+/// Cancels the gradient animation if it’s in progress.
+- (void)cancelGradientAnimation;
 @end
 
 
@@ -441,6 +447,32 @@ SWIFT_CLASS_NAMED("GFPRendererSplashView")
 - (void)changeStyleWith:(BOOL)isDarkMode;
 - (CGFloat)estimateHeight SWIFT_WARN_UNUSED_RESULT;
 - (void)updateAdStyleOptionWith:(GFPAdStyleOption * _Nullable)defaultOption darkOption:(GFPAdStyleOption * _Nullable)darkOption;
+@end
+
+
+SWIFT_CLASS_NAMED("GFPRendererTravelSpecialDAView")
+@interface GFPRendererTravelSpecialDAView : UIView
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull extraKeyStar;)
++ (NSString * _Nonnull)extraKeyStar SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull extraKeyReview;)
++ (NSString * _Nonnull)extraKeyReview SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull extraKeyDiscount;)
++ (NSString * _Nonnull)extraKeyDiscount SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+@end
+
+
+@interface GFPRendererTravelSpecialDAView (SWIFT_EXTENSION(GFPSDKAdRenderer)) <GFPNativeTemplateViewProtocol>
+- (GFPMediaView * _Nullable)mediaContainerView SWIFT_WARN_UNUSED_RESULT;
+- (UILabel * _Nullable)titleAssetView SWIFT_WARN_UNUSED_RESULT;
+- (UILabel * _Nullable)bodyAssetView SWIFT_WARN_UNUSED_RESULT;
+- (UILabel * _Nullable)advertiseAssetView SWIFT_WARN_UNUSED_RESULT;
++ (UIView * _Nullable)createView SWIFT_WARN_UNUSED_RESULT;
+- (void)bindWith:(id <GFPNativeAssetProtocol> _Nullable)asset;
+- (void)changeStyleWith:(BOOL)isDarkMode;
+- (CGFloat)estimateHeight SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class UIImage;
@@ -881,8 +913,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 
 
-SWIFT_CLASS_NAMED("GFPRendererShoppingNDAView")
-@interface GFPRendererShoppingNDAView : UIView
+SWIFT_CLASS_NAMED("GFPRendererShoppingNDASpecialDAView")
+@interface GFPRendererShoppingNDASpecialDAView : UIView
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull extraKeyDiscount;)
 + (NSString * _Nonnull)extraKeyDiscount SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull extraKeyLabelBadge;)
@@ -901,7 +933,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 @class GFPNativeBaseRenderingSetting;
 
-@interface GFPRendererShoppingNDAView (SWIFT_EXTENSION(GFPSDKAdRenderer)) <GFPNativeTemplateViewProtocol>
+@interface GFPRendererShoppingNDASpecialDAView (SWIFT_EXTENSION(GFPSDKAdRenderer)) <GFPNativeTemplateViewProtocol>
 - (UILabel * _Nullable)titleAssetView SWIFT_WARN_UNUSED_RESULT;
 - (UILabel * _Nullable)advertiseAssetView SWIFT_WARN_UNUSED_RESULT;
 - (GFPMediaView * _Nullable)mediaContainerView SWIFT_WARN_UNUSED_RESULT;
@@ -913,6 +945,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (CGFloat)estimateHeight SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)scaleRatio SWIFT_WARN_UNUSED_RESULT;
 - (void)updateRenderingSetting:(GFPNativeBaseRenderingSetting * _Nullable)renderingSetting;
+/// Starts the gradient light effect animation on media view.
+/// Animation spec: left-to-right x-axis movement, ease-in-out, duration 1200ms,
+/// repeat once after 1000ms delay from initial animation completion.
+- (void)startGradientAnimation;
+/// Cancels the gradient animation if it’s in progress.
+- (void)cancelGradientAnimation;
 @end
 
 
@@ -960,6 +998,32 @@ SWIFT_CLASS_NAMED("GFPRendererSplashView")
 - (void)changeStyleWith:(BOOL)isDarkMode;
 - (CGFloat)estimateHeight SWIFT_WARN_UNUSED_RESULT;
 - (void)updateAdStyleOptionWith:(GFPAdStyleOption * _Nullable)defaultOption darkOption:(GFPAdStyleOption * _Nullable)darkOption;
+@end
+
+
+SWIFT_CLASS_NAMED("GFPRendererTravelSpecialDAView")
+@interface GFPRendererTravelSpecialDAView : UIView
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull extraKeyStar;)
++ (NSString * _Nonnull)extraKeyStar SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull extraKeyReview;)
++ (NSString * _Nonnull)extraKeyReview SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull extraKeyDiscount;)
++ (NSString * _Nonnull)extraKeyDiscount SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+@end
+
+
+@interface GFPRendererTravelSpecialDAView (SWIFT_EXTENSION(GFPSDKAdRenderer)) <GFPNativeTemplateViewProtocol>
+- (GFPMediaView * _Nullable)mediaContainerView SWIFT_WARN_UNUSED_RESULT;
+- (UILabel * _Nullable)titleAssetView SWIFT_WARN_UNUSED_RESULT;
+- (UILabel * _Nullable)bodyAssetView SWIFT_WARN_UNUSED_RESULT;
+- (UILabel * _Nullable)advertiseAssetView SWIFT_WARN_UNUSED_RESULT;
++ (UIView * _Nullable)createView SWIFT_WARN_UNUSED_RESULT;
+- (void)bindWith:(id <GFPNativeAssetProtocol> _Nullable)asset;
+- (void)changeStyleWith:(BOOL)isDarkMode;
+- (CGFloat)estimateHeight SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class UIImage;

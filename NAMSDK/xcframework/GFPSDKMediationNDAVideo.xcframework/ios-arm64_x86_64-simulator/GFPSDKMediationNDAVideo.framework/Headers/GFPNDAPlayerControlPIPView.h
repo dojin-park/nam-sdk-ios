@@ -10,6 +10,8 @@
 #import "GFPNDAPlayerDelegate.h"
 #import "GFPNDAPlayerControlViewDelegate.h"
 
+@import NaverAdsServices;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class GFPNDAVast;
@@ -21,8 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithCoder:(NSCoder *)decoder NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 
-- (instancetype)initWithFrame:(CGRect)frame vast:(nonnull GFPNDAVast *)aVast displayMode:(GFPVideoDisplayMode *)displayMode;
-
+- (instancetype)initWithFrame:(CGRect)frame nasVastAd:(GFPVastAd *)aVast displayMode:(GFPVideoDisplayMode *)displayMode;
 
 - (void)updateCustomTopView:(UIView *)customTopView;
 - (void)tapControlUI;

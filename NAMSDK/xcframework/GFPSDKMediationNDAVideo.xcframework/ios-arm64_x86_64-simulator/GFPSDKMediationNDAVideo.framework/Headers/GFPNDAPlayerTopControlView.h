@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GFPStaticResource.h"
+
+@import NaverAdsServices;
 
 @class GFPNDAPlayerTopControlView;
 @class GFPAdChoiceInfo;
@@ -25,8 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol GFPNDAPlayerTopDelegate <NSObject>
 
-- (void)topView:(GFPNDAPlayerTopControlView *)aTopView didMoreTapped:(NSString *)aURL;
-- (void)topView:(GFPNDAPlayerTopControlView *)aTopView didElectionTapped:(NSString *)aURL;
+- (void)topView:(GFPNDAPlayerTopControlView *)aTopView didMoreTappedWith:(NSString *)clickThroughURL;
+- (void)topView:(GFPNDAPlayerTopControlView *)aTopView didElectionTapped:(GFPVastIcon *)clickIcon;
 
 @end
 
@@ -39,8 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 
 - (instancetype)initWithFrame:(CGRect)aFrame
-                 clickThrough:(NSString *)aClickThrough
-                     iconList:(NSArray<Icon *> *)aIconList NS_DESIGNATED_INITIALIZER;
+              nasClickThrough:(GFPVastImpression *)nasClickThrough
+                     iconList:(NSArray<GFPVastIcon *> *)aIconList NS_DESIGNATED_INITIALIZER;
 
 - (void)showTopViewComponent;
 - (IBAction)moreTappedByService:(id)sender;

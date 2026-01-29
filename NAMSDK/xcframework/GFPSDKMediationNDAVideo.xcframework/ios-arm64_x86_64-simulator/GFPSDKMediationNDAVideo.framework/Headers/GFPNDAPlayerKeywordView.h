@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@import NaverAdsServices;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol GFPNDAPlayerKeywordViewDelegate <NSObject>
 
-- (void)keywordView:(GFPNDAPlayerKeywordView *)keywordView didKeywordTapped:(GFPTrackingURLs *)trackingUrls;
+- (void)keywordView:(GFPNDAPlayerKeywordView *)keywordView didKeywordTapped:(id<GFPNASTrackingWrapper>)trackingWrapper;
 
 @end
 
@@ -36,7 +37,7 @@ static const NSTimeInterval kKeywordAnimationDuration = 0.5;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 
 - (instancetype)initWithFrame:(CGRect)frame 
-                  controlInfo:(GFPNDAVastControlInfo *)aControlInfo NS_DESIGNATED_INITIALIZER;
+                  controlInfo:(GFPNASVastControlInfo *)nasControlInfo NS_DESIGNATED_INITIALIZER;
 
 - (void)updateCurrentTime:(NSTimeInterval)currentTime;
 

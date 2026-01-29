@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame remindAd:(GFPRemindAd *)aRemindAd logId:(NSUUID *)logId;
 
+- (void)updateLogId:(NSUUID * _Nullable)logId;
+
 @end
 
 NS_ASSUME_NONNULL_END

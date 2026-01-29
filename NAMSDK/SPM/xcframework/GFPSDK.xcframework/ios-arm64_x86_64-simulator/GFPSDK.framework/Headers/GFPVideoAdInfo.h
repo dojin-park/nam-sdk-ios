@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@import NaverAdsServices;
 
 @class GFPRemindAd;
-@class GFPLoudnessNormalization;
 @class GFPNonLinearAdView;
 
 
@@ -34,7 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
 * 로드된 Loudness Normalization.
 */
-@property (readonly, nonatomic, strong, nullable) GFPLoudnessNormalization *loudnessNormalization;
+
+@property (readonly, nonatomic, strong, nullable) GFPNASLoudnessNormalization *nasLoudnessNormalization;
 
 
 /**
@@ -56,7 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
                              url:(NSURL *)aURL
                     remindAdList:(NSArray <GFPRemindAd *> *)aRemindAdList
                   remindViewList:(NSArray <GFPNonLinearAdView *> *)remindViewList
-           loudnessNormalization:(GFPLoudnessNormalization *)aLoundess;
+        nasLoudnessNormalization:(GFPNASLoudnessNormalization *)aLoundess;
 
 
 @end

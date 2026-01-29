@@ -9,6 +9,7 @@
 
 
 #import <Foundation/Foundation.h>
+@import NaverAdsServices;
 
 @protocol GFPNDAVideoAdManagerDelegate;
 
@@ -55,7 +56,7 @@ typedef NS_OPTIONS(NSInteger, GFPNDAAutoPlayStatus) {
 
 - (instancetype)initManagerWithVastXML:(NSString *)vastXMLString
                        vastMaxRedirect:(NSNumber *)vastMaxRedirect
-                              skipInfo:(GFPAdSkipInfo * _Nullable)skipInfo
+                           nasSkipInfo:(GFPVastAdSkipInfo *_Nullable)skipInfo
                            skAdNetwork:(GFPSKAdNetworkInfo *)skAdNetwork
                           adChoiceInfo:(GFPAdChoiceInfo *_Nullable)adChoiceInfo
                           videoContext:(GFPVideoContext *)videoContext;

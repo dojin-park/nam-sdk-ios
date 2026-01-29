@@ -8,9 +8,9 @@
 
 #import "GFPNDANativeAd.h"
 
+@import NaverAdsServices;
 @class GFPNativeAdInfo;
 @class GFPNativeAdRenderingSetting;
-@class GFPAdSkipInfo;
 @class GFPAdImpressionInfo;
 @class GFPAutoPlayInfo;
 @class GFPVideoOptions;
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithNativeAdInfo:(GFPNativeAdInfo *)nativeAdInfo
                      skAdNetworkInfo:(GFPSKAdNetworkInfo *)skNetworkInfo
-                            skipInfo:(GFPAdSkipInfo *)skipInfo
+                         nasSkipInfo:(GFPVastAdSkipInfo *)nasSkipInfo
                         adChoiceInfo:(GFPAdChoiceInfo *)adChoiceInfo
                      vastMaxRedirect:(NSNumber *)vastMaxRedirect
                              context:(GFPNativeContext *)nativeContext

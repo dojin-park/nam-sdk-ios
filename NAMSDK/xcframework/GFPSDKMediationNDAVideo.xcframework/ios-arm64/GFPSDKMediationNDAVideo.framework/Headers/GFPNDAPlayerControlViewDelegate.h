@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GFPNDAPlayerDelegate.h"
+@import NaverAdsServices;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,8 +38,8 @@ typedef NS_OPTIONS(NSInteger, GFPNDAControlStatus) {
 - (void)playerControlView:(GFPNDAPlayerControlView *)controlView playButtonTapped:(UIButton *)sender;
 - (void)playerControlView:(GFPNDAPlayerControlView *)controlView pauseButtonTapped:(UIButton *)sender;
 - (void)playerControlView:(GFPNDAPlayerControlView *)controlView skipButtonTapped:(UIButton *)sender;
-- (void)playerControlView:(GFPNDAPlayerControlView *)controlView keywordTapped:(GFPTrackingURLs *)tracking;
-- (void)playerControlView:(GFPNDAPlayerControlView *)controlView landingTappedWithUrl:(NSString *)landingUrl;
+- (void)playerControlView:(GFPNDAPlayerControlView *)controlView keywordTapped:(id<GFPNASTrackingWrapper>)trackingWrapper;
+- (void)playerControlView:(GFPNDAPlayerControlView *)controlView landingTappedWithClickThroughURL:(NSString *)clickThroughURL;
 
 @optional
 - (void)playerControlView:(UIView *)controlView closeButtonTapped:(UIButton *)sender; //for pip

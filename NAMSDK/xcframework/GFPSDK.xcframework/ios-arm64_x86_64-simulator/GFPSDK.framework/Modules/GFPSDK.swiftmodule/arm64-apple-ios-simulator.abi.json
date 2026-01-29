@@ -5756,6 +5756,59 @@
           },
           {
             "kind": "Var",
+            "name": "shoppingNdaLighting",
+            "printedName": "shoppingNdaLighting",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@GFPSDK@objc(cs)GFPVisualKey(cpy)shoppingNdaLighting",
+            "mangledName": "$s6GFPSDK12GFPVisualKeyC19shoppingNdaLightingSSvpZ",
+            "moduleName": "GFPSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@GFPSDK@objc(cs)GFPVisualKey(cm)shoppingNdaLighting",
+                "mangledName": "$s6GFPSDK12GFPVisualKeyC19shoppingNdaLightingSSvgZ",
+                "moduleName": "GFPSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "splash",
             "printedName": "splash",
             "children": [
@@ -5796,6 +5849,59 @@
                 "declKind": "Accessor",
                 "usr": "c:@M@GFPSDK@objc(cs)GFPVisualKey(cm)splash",
                 "mangledName": "$s6GFPSDK12GFPVisualKeyC6splashSSvgZ",
+                "moduleName": "GFPSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "travelSpecialDA",
+            "printedName": "travelSpecialDA",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@GFPSDK@objc(cs)GFPVisualKey(cpy)travelSpecialDA",
+            "mangledName": "$s6GFPSDK12GFPVisualKeyC15travelSpecialDASSvpZ",
+            "moduleName": "GFPSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@GFPSDK@objc(cs)GFPVisualKey(cm)travelSpecialDA",
+                "mangledName": "$s6GFPSDK12GFPVisualKeyC15travelSpecialDASSvgZ",
                 "moduleName": "GFPSDK",
                 "static": true,
                 "implicit": true,
@@ -34810,42 +34916,56 @@
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Display\/Native\/GFPVisualKey.swift",
       "kind": "StringLiteral",
-      "offset": 504,
+      "offset": 517,
+      "length": 36,
+      "value": "\"NORMAL_IMAGE_SHOPPING_H84_LIGHTING\""
+    },
+    {
+      "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Display\/Native\/GFPVisualKey.swift",
+      "kind": "StringLiteral",
+      "offset": 572,
       "length": 21,
       "value": "\"NORMAL_IMAGE_CUSTOM\""
     },
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Display\/Native\/GFPVisualKey.swift",
       "kind": "StringLiteral",
-      "offset": 797,
+      "offset": 621,
+      "length": 21,
+      "value": "\"NORMAL_IMAGE_TRAVEL\""
+    },
+    {
+      "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Display\/Native\/GFPVisualKey.swift",
+      "kind": "StringLiteral",
+      "offset": 954,
       "length": 27,
       "value": "\"NORMAL_VIDEO_IMAGE2MOTION\""
     },
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Display\/Native\/GFPVisualKey.swift",
       "kind": "StringLiteral",
-      "offset": 885,
+      "offset": 1042,
       "length": 31,
       "value": "\"NORMAL_IMAGE_FEED_INTERACTION\""
     },
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Display\/Native\/GFPVisualKey.swift",
       "kind": "StringLiteral",
-      "offset": 981,
+      "offset": 1138,
       "length": 22,
       "value": "\"CAROUSEL_IMAGE_MEDIA\""
     },
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Display\/Native\/GFPVisualKey.swift",
       "kind": "StringLiteral",
-      "offset": 1036,
+      "offset": 1193,
       "length": 22,
       "value": "\"CAROUSEL_VIDEO_MEDIA\""
     },
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Display\/Native\/GFPVisualKey.swift",
       "kind": "StringLiteral",
-      "offset": 1094,
+      "offset": 1251,
       "length": 33,
       "value": "\"CAROUSEL_IMAGE_INTERACTION_HOME\""
     },

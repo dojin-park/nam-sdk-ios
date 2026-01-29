@@ -14,6 +14,7 @@
 #import "GFPNDAPlayerView.h"
 #import "GFPNDAPlayerControlViewDelegate.h"
 
+@import NaverAdsServices;
 
 @class GFPNDAVast;
 @class GFPAdChoiceInfo;
@@ -29,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 
 - (instancetype)initWithFrame:(CGRect)frame
-                         vast:(GFPNDAVast *)aVast
+                    nasVastAd:(nonnull GFPVastAd *)nasVastAd
                 placementType:(GFPVideoPlacementType)aType
                  adChoiceInfo:(nullable GFPAdChoiceInfo *)adChoiceInfo
              renderingSetting:(nullable GFPVideoAdRenderingSetting *)renderingSetting

@@ -75,6 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)pause;
 - (void)destroy;
 
+- (void)forceSkip;
 
 /**
  * 광고의 Overlay(Seekbar, Pause, Resume, 선거 광고, 후광고 Text) 영역을 노출합니다.

@@ -12,6 +12,8 @@
 
 #import "GFPLanguageType.h"
 
+@import NaverAdsServices;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GFPNDAVideoUtils : NSObject
@@ -30,6 +32,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)resourceStringWith:(NSString *)aMeesageKey;
 - (NSString *)stringWith:(NSString *)aKey message:(NSString *)aMeesage;
+
+@end
+
+@interface GFPVastIcon (GFPNDA)
+
+- (NSString *)contentDescription;
 
 @end
 

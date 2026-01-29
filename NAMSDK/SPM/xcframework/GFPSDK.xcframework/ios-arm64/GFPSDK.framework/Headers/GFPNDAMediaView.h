@@ -66,6 +66,7 @@ typedef NS_OPTIONS(NSInteger, GFPNDAMediaViewType) {
     GFPNDARendererMediaViewSmartChannelFlicking = 1001,
     GFPNDARendererMediaViewShoppingNDA = 1002,
     GFPNDARendererMediaViewSplash = 1003,
+    GFPNDARendererMediaViewTravelSpecialDA = 1004,
 };
 
 typedef NS_OPTIONS(NSInteger, GFPNDAMediaViewRenderType) {

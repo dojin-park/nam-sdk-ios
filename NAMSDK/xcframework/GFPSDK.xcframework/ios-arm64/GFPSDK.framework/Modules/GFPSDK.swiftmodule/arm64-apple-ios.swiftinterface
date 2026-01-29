@@ -159,7 +159,9 @@ extension GFPSDK.GFPErrorUtils {
   @objc public static let shoppingLabel: Swift.String
   @objc public static let smartChannelCarousel: Swift.String
   @objc public static let shoppingNda: Swift.String
+  @objc public static let shoppingNdaLighting: Swift.String
   @objc public static let splash: Swift.String
+  @objc public static let travelSpecialDA: Swift.String
   @objc public static let imageToMotion: Swift.String
   @objc public static let imageScrollMotion: Swift.String
   @objc public static let carouselComplexImage: Swift.String
