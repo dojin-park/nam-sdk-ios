@@ -35568,55 +35568,55 @@
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Config\/GFPSDKPhase.swift",
       "kind": "StringLiteral",
       "offset": 255,
-      "length": 32,
-      "value": "\"https:\/\/dev-gfp.veta.naver.com\""
+      "length": 80,
+      "value": "\"http:\/\/gfp-mock-ad-server.n3r-project-gfp-sdk.svc.pgdpb1.io.navercorp.com:3000\""
     },
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Config\/GFPSDKPhase.swift",
       "kind": "StringLiteral",
-      "offset": 316,
+      "offset": 364,
       "length": 28,
       "value": "\"https:\/\/nam.veta.naver.com\""
     },
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Config\/GFPSDKPhase.swift",
       "kind": "StringLiteral",
-      "offset": 398,
+      "offset": 446,
       "length": 33,
       "value": "\"https:\/\/beta-nam.veta.naver.com\""
     },
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Config\/GFPSDKPhase.swift",
       "kind": "StringLiteral",
-      "offset": 460,
+      "offset": 508,
       "length": 8,
       "value": "\"\/is\/v2\""
     },
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Config\/GFPSDKPhase.swift",
       "kind": "StringLiteral",
-      "offset": 505,
+      "offset": 553,
       "length": 14,
       "value": "\"\/registSkAdn\""
     },
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Config\/GFPSDKPhase.swift",
       "kind": "StringLiteral",
-      "offset": 550,
+      "offset": 598,
       "length": 9,
       "value": "\"\/gfp\/v1\""
     },
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Config\/GFPSDKPhase.swift",
       "kind": "StringLiteral",
-      "offset": 597,
+      "offset": 645,
       "length": 6,
       "value": "\"\/vas\""
     },
     {
       "filePath": "\/Users\/user\/actions-ios-runner\/_work\/gfp-sdk-ios\/gfp-sdk-ios\/GFPSDK\/Config\/GFPSDKPhase.swift",
       "kind": "StringLiteral",
-      "offset": 627,
+      "offset": 675,
       "length": 40,
       "value": "\"https:\/\/nelo2-col.navercorp.com\/_store\""
     },
