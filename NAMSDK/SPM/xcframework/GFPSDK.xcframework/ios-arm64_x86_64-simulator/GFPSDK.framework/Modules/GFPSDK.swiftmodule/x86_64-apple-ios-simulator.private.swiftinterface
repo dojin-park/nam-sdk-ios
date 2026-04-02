@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name GFPSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name GFPSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import Foundation
 @_exported import GFPSDK
 import NaverAdsServices
@@ -43,15 +43,29 @@ extension GFPSDK.GFPErrorUtils {
   @objc final public let isBold: Swift.Bool
   @objc final public let bgColor: UIKit.UIColor?
   @objc final public let highlightBgColor: UIKit.UIColor?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc convenience public init(text: Swift.String?)
+  #endif
   @objc final public let badgeOption: GFPSDK.GFPBadgeOption?
   @objc final public let spnnableOption: [GFPSDK.GFPSpannableOption]?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc convenience public init(text: Swift.String?, highlightBgColor: UIKit.UIColor?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc convenience public init(text: Swift.String?, textColor: UIKit.UIColor?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(initWithText:textColor:highlightBgColor:) convenience public init(text: Swift.String?, textColor: UIKit.UIColor?, highlightBgColor: UIKit.UIColor?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc convenience public init(text: Swift.String?, bgColor: UIKit.UIColor?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(initWithText:textColor:bgColor:highlightBgColor:) convenience public init(text: Swift.String?, textColor: UIKit.UIColor?, bgColor: UIKit.UIColor?, highlightBgColor: UIKit.UIColor?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(initWithText:textColor:bgColor:highlightBgColor:isBold:badgeOption:spannableOption:) public init(text: Swift.String?, textColor: UIKit.UIColor?, bgColor: UIKit.UIColor?, highlightBgColor: UIKit.UIColor?, isBold: Swift.Bool, badgeOption: GFPSDK.GFPBadgeOption?, spannableOption: [GFPSDK.GFPSpannableOption]?)
+  #endif
   @objc deinit
 }
 @objc @objcMembers public class GFPBadgeOption : ObjectiveC.NSObject {
@@ -60,7 +74,9 @@ extension GFPSDK.GFPErrorUtils {
   @objc final public let borderWidth: CoreFoundation.CGFloat
   @objc final public let badgeBgColor: UIKit.UIColor?
   @objc final public let badgeBgAlpha: CoreFoundation.CGFloat
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(initWithBorderColor:borderAlpha:borderWidth:badgeBgColor:badgeBgAlpha:) public init(borderColor: UIKit.UIColor?, borderAlpha: CoreFoundation.CGFloat, borderWidth: CoreFoundation.CGFloat, badgeBgColor: UIKit.UIColor?, badgeBgAlpha: CoreFoundation.CGFloat)
+  #endif
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class GFPWaterfallAdSize : ObjectiveC.NSObject {
@@ -82,7 +98,9 @@ extension GFPSDK.GFPErrorUtils {
   @objc public var error: GFPSDK.GFPServerError {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init?(withDictionary dict: [Swift.String : Any])
+  #endif
   @objc public var serverErrorDescription: Swift.String {
     @objc get
   }
@@ -103,7 +121,9 @@ extension GFPSDK.GFPErrorUtils {
   @objc public var level: Swift.String? {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init?(withDictionary dict: [Swift.String : Any])
+  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -115,8 +135,12 @@ extension GFPSDK.GFPErrorUtils {
   @objc final public var additionalInfo: GFPSDK.GFPAdInitProviderAdditionalInfo?
   @objc public init(withDictionary dict: Swift.Dictionary<Swift.String, Any>)
   @objc public init(withType type: Swift.String, testMode: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func dictionary() -> [Swift.String : Swift.String]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func adProviders(_ dict: Swift.Dictionary<Swift.String, Any>) -> [GFPSDK.GFPAdInitProviderInfo]?
+  #endif
   @objc override final public var description: Swift.String {
     @objc get
   }
@@ -144,7 +168,9 @@ extension GFPSDK.GFPErrorUtils {
   public var stringValue: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [GFPSDK.GFPInspectorInternalLogType]
   public typealias RawValue = Swift.Int
   nonisolated public static var allCases: [GFPSDK.GFPInspectorInternalLogType] {
@@ -169,15 +195,23 @@ extension GFPSDK.GFPErrorUtils {
   @objc public var isEmpty: Swift.Bool {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func enqueue(_ queueObject: (any GFPSDK.GFPQueueObject)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func enqueueAndReplace(_ queueObject: (any GFPSDK.GFPQueueObject)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func dequeue() -> (any GFPSDK.GFPQueueObject)?
+  #endif
   @objc public class func sizeWith(_ size: Swift.Int) -> GFPSDK.GFPLimitQueue
   @objc public init(size: Swift.Int)
   @objc deinit
 }
 @objc public protocol GFPVideoAdAdditionalViewDataAccessibilityProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func additionalAdAccessibilityView() -> UIKit.UIView?
+  #endif
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class GFPVideoAdRenderingSetting : ObjectiveC.NSObject {
   @objc public static let GFPVideoAdRenderingSettingAutodetectBitrate: Swift.Int
@@ -208,7 +242,9 @@ extension GFPSDK.GFPErrorUtils {
 @objc public enum GFPVideoBackgroundActionType : Swift.Int {
   case play
   case pause
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -239,7 +275,9 @@ extension GFPSDK.GFPErrorUtils {
   @objc final public let endPos: Swift.Int
   @objc final public let isBold: Swift.Bool
   @objc final public let textColor: UIKit.UIColor?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(initWithTextColor:startPos:endPos:isBold:) public init(textColor: UIKit.UIColor?, startPos: Swift.Int, endPos: Swift.Int, isBold: Swift.Bool)
+  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(GFPRendererTravelSpecialDAView) @objcMembers @_Concurrency.MainActor @preconcurrency public class GFPRendererTravelSpecialDAView : UIKit.UIView {
@@ -251,12 +289,24 @@ extension GFPSDK.GFPErrorUtils {
   @objc deinit
 }
 extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func mediaContainerView() -> GFPSDK.GFPMediaView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func titleAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func bodyAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func advertiseAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc public static func createView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func bind(with asset: (any GFPSDK.GFPNativeAssetProtocol)?)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func changeStyle(with isDarkMode: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func estimateHeight() -> CoreFoundation.CGFloat
 }
@@ -275,8 +325,12 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
   @objc public var waterfallFileName: Swift.String?
   @objc public var sdkInitDebugEnabled: Swift.Bool
   @objc public var sdkInitFileName: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func debugWaterfallDict() -> Swift.Dictionary<Swift.String, Any>?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func debugAdInitDict() -> Swift.Dictionary<Swift.String, Any>?
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -301,12 +355,18 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
   @objc public var moreIcon: UIKit.UIImage?
   @objc public var containerView: UIKit.UIView?
   @objc override dynamic public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(initWithContainer:) required public init(with container: UIKit.UIView?)
+  #endif
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class GFPURLUtilsExtension : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func sendGFPEventToUrl(_ urlString: Swift.String?, logId: Foundation.UUID?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func openURLWith(_ aURL: Swift.String, completion: GFPSDK.GFPS2SAdLandingHandler?)
+  #endif
   @objc public class func defaultRequestWith(_ url: Foundation.URL) -> Foundation.URLRequest
   @objc override dynamic public init()
   @objc deinit
@@ -320,7 +380,9 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(createIconInfoWith:) public static func createImageInfo(image: UIKit.UIImage?) -> GFPSDK.GFPIconData
+  #endif
   @objc deinit
 }
 @objc public enum GFPBannerProviderOption : Swift.Int {
@@ -339,7 +401,9 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
   case BidMachine
   case pangle
   case end
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -350,7 +414,9 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
   case NDA
   case IMA
   case end
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -367,7 +433,9 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
   case bidMachine
   case pangle
   case end
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -377,7 +445,9 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
   case none
   case DFP
   case end
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -400,7 +470,9 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
   case BidMachine
   case pangle
   case end
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -423,7 +495,9 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
   case BidMachine
   case pangle
   case end
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -448,7 +522,9 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
     @objc set
   }
   @objc public init(scheduleID aScheduleID: Swift.String, requestID: Swift.String, contentLength: Swift.Float)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -472,12 +548,18 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
   @objc final public let lightModeColor: UIKit.UIColor
   @objc final public let isTemplateMode: Swift.Bool
   @objc final public let templateImageName: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(initWith:size:lightModeName:darkModeName:) public init(bundle: Foundation.Bundle?, size: CoreFoundation.CGSize, lightModeName: Swift.String, darkModeName: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(initWith:size:templateImageName:lightModeColor:darkModeColor:) public init(bundle: Foundation.Bundle?, size: CoreFoundation.CGSize, templateImageName: Swift.String, lightModeColor: UIKit.UIColor, darkModeColor: UIKit.UIColor)
+  #endif
   @objc(isExistResource) public var isExistResource: Swift.Bool {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(getTintColor:) public func getTintColor(isDarkMode: Swift.Bool) -> UIKit.UIColor?
+  #endif
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class GFPAdNativeOptions : ObjectiveC.NSObject {
@@ -494,7 +576,9 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
   @objc deinit
 }
 @objc public protocol GFPDictPresentable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func dictionary() -> [Swift.String : Swift.String]?
+  #endif
 }
 @_inheritsConvenienceInitializers @objc(GFPRendererShoppingLabelView) @objcMembers @_Concurrency.MainActor @preconcurrency public class GFPRendererShoppingLabelView : UIKit.UIView {
   @objc(extraKeyNStore) @_Concurrency.MainActor @preconcurrency public static let extraKeyNStore: Swift.String
@@ -505,19 +589,39 @@ extension GFPSDK.GFPRendererTravelSpecialDAView : GFPSDK.GFPNativeTemplateViewPr
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func awakeFromNib()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 extension GFPSDK.GFPRendererShoppingLabelView : GFPSDK.GFPNativeTemplateViewProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func advertiseAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func mediaContainerView() -> GFPSDK.GFPMediaView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func bodyAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func ctaAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func noticeAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func adChoicesContainerView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func extraView(with key: Swift.String) -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc public static func createView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func bind(with asset: (any GFPSDK.GFPNativeAssetProtocol)?)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func changeStyle(with isDarkMode: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func estimateHeight() -> CoreFoundation.CGFloat
 }
@@ -525,16 +629,26 @@ extension GFPSDK.GFPRendererShoppingLabelView : GFPSDK.GFPNativeTemplateViewProt
   @objc(smartChannelHeight) @_Concurrency.MainActor @preconcurrency public static let smartChannelHeight: Swift.Double
   @objc(smartChannelMaxWidth) @_Concurrency.MainActor @preconcurrency public static let smartChannelMaxWidth: Swift.Double
   @objc(smartChannelMaxHeight) @_Concurrency.MainActor @preconcurrency public static let smartChannelMaxHeight: Swift.Double
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
   @objc deinit
 }
 extension GFPSDK.GFPRendererSmartChannelFlickingView : GFPSDK.GFPNativeTemplateViewProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func mediaContainerView() -> GFPSDK.GFPMediaView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func adChoicesContainerView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc public static func createView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func bind(with asset: (any GFPSDK.GFPNativeAssetProtocol)?)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func changeStyle(with isDarkMode: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func estimateHeight() -> CoreFoundation.CGFloat
 }
@@ -560,10 +674,12 @@ extension GFPSDK.GFPRendererSmartChannelFlickingView : GFPSDK.GFPNativeTemplateV
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func sizeToFit()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public var text: Swift.String? {
     @objc get
     @objc set
   }
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public func createGradientView(startPoint: CoreFoundation.CGPoint, endPoint: CoreFoundation.CGPoint, colors: [Any])
   @objc @_Concurrency.MainActor @preconcurrency public func updateGradientView(isHidden: Swift.Bool)
   @objc @_Concurrency.MainActor @preconcurrency public func updateViewSize(aSize: CoreFoundation.CGSize)
@@ -576,23 +692,41 @@ extension GFPSDK.GFPRendererSmartChannelFlickingView : GFPSDK.GFPNativeTemplateV
   @objc(extraKeyStar) @_Concurrency.MainActor @preconcurrency public static let extraKeyStar: Swift.String
   @objc(extraViewKeyBadge) @_Concurrency.MainActor @preconcurrency public static let extraViewKeyBadge: Swift.String
   @objc(extraViewShortContentsArrow) @_Concurrency.MainActor @preconcurrency public static let extraViewShortContentsArrow: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
   @objc deinit
 }
 extension GFPSDK.GFPRendererShoppingNDASpecialDAView : GFPSDK.GFPNativeTemplateViewProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func titleAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func advertiseAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func mediaContainerView() -> GFPSDK.GFPMediaView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func bodyAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func extraView(with key: Swift.String) -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc public static func createView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func bind(with asset: (any GFPSDK.GFPNativeAssetProtocol)?)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func changeStyle(with isDarkMode: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func estimateHeight() -> CoreFoundation.CGFloat
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func scaleRatio() -> CoreFoundation.CGFloat
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func updateRenderingSetting(renderingSetting: GFPSDK.GFPNativeBaseRenderingSetting?)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency dynamic public func startGradientAnimation()
   @objc @_Concurrency.MainActor @preconcurrency dynamic public func cancelGradientAnimation()
 }
@@ -601,30 +735,58 @@ extension GFPSDK.GFPRendererShoppingNDASpecialDAView : GFPSDK.GFPNativeTemplateV
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func awakeFromNib()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 extension GFPSDK.GFPTemplateDefaultNativeView : GFPSDK.GFPNativeTemplateViewProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func mediaContainerView() -> GFPSDK.GFPMediaView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func iconContainerView() -> UIKit.UIImageView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func titleAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func advertiseAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func bodyAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func ctaAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func adChoicesContainerView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func serviceAdBadgeContainerView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc public static func createView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func bind(with asset: (any GFPSDK.GFPNativeAssetProtocol)?)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func changeStyle(with isDarkMode: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func estimateHeight() -> CoreFoundation.CGFloat
 }
 extension GFPSDK.GFPTemplateDefaultNativeView : GFPSDK.GFPUserInterestDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func ad(_ ad: ObjectiveC.NSObject!, didChangeUserInterest userInterest: Swift.Bool)
+  #endif
 }
 @_inheritsConvenienceInitializers @objc(GFPRendererUtils) @objcMembers public class GFPRendererUtils : ObjectiveC.NSObject {
   @objc public static let sharedInstance: GFPSDK.GFPRendererUtils
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func loadNib(name: Swift.String) -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func loadImage(name: Swift.String) -> UIKit.UIImage?
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -632,19 +794,39 @@ extension GFPSDK.GFPTemplateDefaultNativeView : GFPSDK.GFPUserInterestDelegate {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func awakeFromNib()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 extension GFPSDK.GFPTemplateDefaultNativeBannerView : GFPSDK.GFPNativeTemplateViewProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func iconContainerView() -> UIKit.UIImageView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func titleAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func advertiseAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func bodyAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func ctaAssetView() -> UIKit.UILabel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func adChoicesContainerView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func serviceAdBadgeContainerView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc public static func createView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func bind(with asset: (any GFPSDK.GFPNativeAssetProtocol)?)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func changeStyle(with isDarkMode: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func estimateHeight() -> CoreFoundation.CGFloat
 }
@@ -661,7 +843,9 @@ extension GFPSDK.GFPTemplateDefaultNativeBannerView : GFPSDK.GFPNativeTemplateVi
   case newVideoExtendV2
   case newVideoExtendV3
   case imageExtendV3
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -704,14 +888,20 @@ extension GFPSDK.GFPTemplateDefaultNativeBannerView : GFPSDK.GFPNativeTemplateVi
   @objc final public let adUnitIds: [Swift.String]?
   @objc final public let appSignatureId: [Swift.String]?
   @objc final public let adUnits: [GFPSDK.GFPAdInitProviderAdUnits]?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init?(withDictionary dict: Swift.Dictionary<Swift.String, Any>?)
+  #endif
   @objc deinit
 }
 @objc(GFPAdInitProviderAdUnits) @objcMembers public class GFPAdInitProviderAdUnits : ObjectiveC.NSObject {
   @objc final public let adUnitId: Swift.String?
   @objc final public let placements: [GFPSDK.GFPAdInitProviderPlacementInfo]?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init?(withDictionary dict: Swift.Dictionary<Swift.String, Any>?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func placement(for placeId: Swift.String) -> GFPSDK.GFPAdInitProviderPlacementInfo?
+  #endif
   @objc deinit
 }
 @objc(GFPAdInitProviderPlacementInfo) @objcMembers public class GFPAdInitProviderPlacementInfo : ObjectiveC.NSObject {
@@ -721,24 +911,38 @@ extension GFPSDK.GFPTemplateDefaultNativeBannerView : GFPSDK.GFPNativeTemplateVi
   @objc public var size: CoreFoundation.CGSize {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init?(withDictionary dict: Swift.Dictionary<Swift.String, Any>?)
+  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(GFPRendererSplashView) @objcMembers @_Concurrency.MainActor @preconcurrency public class GFPRendererSplashView : UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func awakeFromNib()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 extension GFPSDK.GFPRendererSplashView : GFPSDK.GFPNativeTemplateViewProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func iconContainerView() -> UIKit.UIImageView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func mediaContainerView() -> GFPSDK.GFPMediaView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc public static func createView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func bind(with asset: (any GFPSDK.GFPNativeAssetProtocol)?)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func changeStyle(with isDarkMode: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func estimateHeight() -> CoreFoundation.CGFloat
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func updateAdStyleOption(with defaultOption: GFPSDK.GFPAdStyleOption?, darkOption: GFPSDK.GFPAdStyleOption?)
+  #endif
 }
 extension GFPSDK.GFPContentInfo : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
@@ -780,7 +984,9 @@ extension GFPSDK.GFPAPSAdParam : Swift.Codable {
   public var stringValue: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [GFPSDK.GFPAdViewType]
   public typealias RawValue = Swift.Int
   nonisolated public static var allCases: [GFPSDK.GFPAdViewType] {
@@ -817,28 +1023,60 @@ extension GFPSDK.GFPExtraRequestParam : Swift.Codable {
     @objc get
   }
   @objc public func enableInspectorLogging(enable: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func addNewAdLog(logId: Foundation.UUID?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logAdLogProperty(_ value: Any?, forKey key: Swift.String?, logId: Foundation.UUID?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logAdError(_ error: NaverAdsServices.GFPError?, logId: Foundation.UUID?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logAdView(_ adView: UIKit.UIView?, logId: Foundation.UUID?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func logAdViewType(_ adViewType: GFPSDK.GFPAdViewType?, logId: Foundation.UUID?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logAdRequest(_ log: GFPSDK.GFPAPILog?, logId: Foundation.UUID?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logAdEvent(_ log: GFPSDK.GFPAPILog?, logId: Foundation.UUID?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logSDKInitRequest(_ log: GFPSDK.GFPAPILog?, logId: Foundation.UUID?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logInternalLog(_ log: GFPSDK.GFPInspectorInternalLog?, logId: Foundation.UUID?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func addNewSDKInitLog(logId: Foundation.UUID?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logSDKInit(result: GFPSDK.GFPSDKInitResult?, logId: Foundation.UUID?)
+  #endif
   @objc public func logUnavailableMediation(withBannerOption option: GFPSDK.GFPBannerProviderOption)
   @objc public func logUnavailableMediation(withNativeOption option: GFPSDK.GFPNativeProviderOption)
   @objc public func logUnavailableMediation(withCombinedOption option: GFPSDK.GFPCombinedProviderOption)
   @objc public func logUnavailableMediation(withVideoOption option: GFPSDK.GFPVideoProviderOption)
   @objc public func logUnavailableMediation(withRewardedOption option: GFPSDK.GFPRewardedAdProviderOption)
   @objc public func logUnavailableMediation(withInterstitialOption option: GFPSDK.GFPInterstitialAdProviderOption)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logAvailableMediation(withProviderType providerType: GFPSDK.GFPProviderType?, productType: GFPSDK.GFPProviderProductType?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logNotUsedMediation(withProviderType providerType: GFPSDK.GFPProviderType?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logInitializedMediation(withProviderType providerType: GFPSDK.GFPProviderType?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logBlockedMediation(withProviderType providerType: GFPSDK.GFPProviderType?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func logErroredMediation(withProviderType providerType: GFPSDK.GFPProviderType?, creativeType: GFPSDK.GFPProviderCreativeType?)
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -874,7 +1112,9 @@ extension GFPSDK.GFPAdProviderSetting : Swift.Codable {
   @objc public var publisherCode: Swift.String?
   @objc public var serviceCode: Swift.String?
   @objc public var error: NaverAdsServices.GFPError?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(isSuccess: Swift.Bool, isCached: Swift.Bool, publisherCode: Swift.String? = nil, serviceCode: Swift.String? = nil, error: NaverAdsServices.GFPError? = nil)
+  #endif
   @objc deinit
 }
 public class GFPAPIRequestLog : Swift.Codable {
@@ -884,11 +1124,13 @@ public class GFPAPIRequestLog : Swift.Codable {
   public var headers: [Swift.String : Swift.String]? {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @GFPSDK.GFPJSONCodableData public var body: Foundation.Data? {
     get
     set
     _modify
   }
+  #endif
   public init(request: Foundation.URLRequest)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -901,17 +1143,25 @@ public class GFPAPIResponseLog : Swift.Codable {
   public var headers: [Swift.String : Swift.String]? {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @GFPSDK.GFPJSONCodableData public var body: Foundation.Data? {
     get
   }
+  #endif
   public var error: Swift.String? {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var waterfallList: GFPSDK.GFPWaterfallList? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(response: Foundation.URLResponse?, body: Foundation.Data?, error: (any Swift.Error)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func isFilled() -> Swift.Bool?
+  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -930,9 +1180,15 @@ public class GFPAPIResponseLog : Swift.Codable {
     get
   }
   @objc public init(time: Foundation.Date)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(time: Foundation.Date, request: Foundation.URLRequest, data: Foundation.Data?, response: Foundation.URLResponse?, error: (any Swift.Error)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func update(request: Foundation.URLRequest?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func update(data: Foundation.Data?, response: Foundation.URLResponse?, error: (any Swift.Error)?)
+  #endif
   @objc public func addExtraLog(forKey key: Swift.String, value: Swift.String)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -940,8 +1196,12 @@ public class GFPAPIResponseLog : Swift.Codable {
 }
 @objc @objcMembers public class GFPInspectorInterface : ObjectiveC.NSObject {
   @objc public init(logId: Foundation.UUID, adViewType: GFPSDK.GFPAdViewType)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func updateLogId(with logId: Foundation.UUID?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor public func registerGesture(onView view: UIKit.UIView, logId: Foundation.UUID?) -> UIKit.UILongPressGestureRecognizer?
+  #endif
   @objc deinit
 }
 extension GFPSDK.GFPCachedAdParam : Swift.Codable {
@@ -949,7 +1209,9 @@ extension GFPSDK.GFPCachedAdParam : Swift.Codable {
   convenience required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class GFPJSONUtils {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func attributedString(from object: Any, titleFont: UIKit.UIFont = .boldSystemFont(ofSize: 16), valueFont: UIKit.UIFont = .systemFont(ofSize: 14), keyColor: UIKit.UIColor = .label, valueColor: UIKit.UIColor = .label, excludeKeys: [Swift.String : Any] = [:], propertyOrder: [Swift.String]? = nil) -> Foundation.NSAttributedString
+  #endif
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class GFPInspectorNativeValidation : Swift.Codable {
@@ -980,9 +1242,15 @@ extension GFPSDK.GFPCachedAdParam : Swift.Codable {
   @objc public func addError(_ error: NaverAdsServices.GFPError)
   @objc public var cachedParam: GFPSDK.GFPCachedAdParam?
   @objc public init(withLogId logId: Foundation.UUID)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func creativeType() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func providerName() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func isFilled() -> Swift.Bool?
+  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -995,7 +1263,9 @@ extension GFPSDK.GFPCachedAdParam : Swift.Codable {
   public var stringValue: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [GFPSDK.GFPInspectorLogType]
   public typealias RawValue = Swift.Int
   nonisolated public static var allCases: [GFPSDK.GFPInspectorLogType] {
@@ -1024,7 +1294,9 @@ extension GFPSDK.GFPCachedAdParam : Swift.Codable {
     @objc get
   }
   @objc(addNewAdLogWithLogId:) public func addNewAdLog(logId: Foundation.UUID)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(adLogForLogId:) public func adLog(forLogId logId: Foundation.UUID) -> GFPSDK.GFPAdLog?
+  #endif
   @objc(logAdViewTypeWith:logId:) public func logAdViewType(with adViewType: Foundation.NSNumber, logId: Foundation.UUID)
   @objc(logAdError:logId:) public func logAdError(_ error: NaverAdsServices.GFPError, logId: Foundation.UUID)
   @objc(logAdView:logId:) public func logAdView(_ adView: UIKit.UIView, logId: Foundation.UUID)
@@ -1070,11 +1342,15 @@ extension NaverAdsServices.GFPError {
   public var title: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var humanReadableDescription: Swift.String? {
     get
   }
+  #endif
   public var extraDescription: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(type: GFPSDK.GFPInspectorInternalLogType, extraDescription: Swift.String? = nil)
+  #endif
   @objc public init(type: GFPSDK.GFPInspectorInternalLogType)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -1086,14 +1362,18 @@ public typealias GFPS2SAdLandingHandler = (Swift.Bool) -> Swift.Void
 }
 @objc @objcMembers public class GFPAdStyleOption : ObjectiveC.NSObject {
   @objc final public let backgroundColor: UIKit.UIColor?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(initWithBackgroundColor:) public init(backgroundColor: UIKit.UIColor?)
+  #endif
   @objc deinit
 }
 @objc public enum GFPVideoDisplayType : Swift.Int {
   case normal
   case casting
   case PIP
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -1118,9 +1398,13 @@ public typealias GFPS2SAdLandingHandler = (Swift.Bool) -> Swift.Void
   @available(*, unavailable)
   @objc override dynamic public init()
   @objc public class func normal() -> GFPSDK.GFPVideoDisplayMode
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func casting(with text: Swift.String?) -> GFPSDK.GFPVideoDisplayMode
+  #endif
   @objc public class func pip() -> GFPSDK.GFPVideoDisplayMode
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func pip(with customTopView: UIKit.UIView?) -> GFPSDK.GFPVideoDisplayMode
+  #endif
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
@@ -1134,7 +1418,9 @@ public typealias GFPS2SAdLandingHandler = (Swift.Bool) -> Swift.Void
   case c2s_image
   case c2s_video
   case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -1159,20 +1445,30 @@ public typealias GFPS2SAdLandingHandler = (Swift.Bool) -> Swift.Void
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(createImageInfoWith:) public static func createImageInfo(image: UIKit.UIImage?) -> GFPSDK.GFPMediaData
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(createImageInfoWith:manualAspectRatio:) public static func createImageInfo(image: UIKit.UIImage?, manualAspectRatio: CoreFoundation.CGFloat) -> GFPSDK.GFPMediaData
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(createVideoInfoWith:) public static func createVideoInfo(videoController: GFPSDK.GFPVideoController?) -> GFPSDK.GFPMediaData
+  #endif
   @objc(createRichMediaInfo) public static func createRichMediaInfo() -> GFPSDK.GFPMediaData
   @objc(createRichMediaInfo:) public static func createRichMediaInfo(richMediaInfo: GFPSDK.GFPRichMediaData) -> GFPSDK.GFPMediaData
   @objc(createC2SInfoWith:aspectRatio:) public static func createC2SInfo(type: GFPSDK.GFPMediaType, c2sAspectRatio: CoreFoundation.CGFloat) -> GFPSDK.GFPMediaData
   @objc(createCarouseMedialInfo) public static func createCarouselMediaInfo() -> GFPSDK.GFPMediaData
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(createComplexMediaInfo:videoController:) public static func createComplexMediaInfo(image: UIKit.UIImage?, videoController: GFPSDK.GFPVideoController?) -> GFPSDK.GFPMediaData
+  #endif
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class GFPBundle : ObjectiveC.NSObject {
   @objc public static let sharedInstance: GFPSDK.GFPBundle
   @objc(sdkResourceStringWith:) public class func sdkResourceString(withMessageKey aMessageKey: Swift.String) -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public class func sdkResource(with aPath: Swift.String?, type aType: Swift.String?) -> Swift.String?
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1187,9 +1483,15 @@ public typealias GFPS2SAdLandingHandler = (Swift.Bool) -> Swift.Void
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class GFPErrorPointerUtils {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func isErrorRaised(errorPtr: Swift.AutoreleasingUnsafeMutablePointer<NaverAdsServices.GFPError?>?) -> Swift.Bool
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func raiseError(errorPtr: Swift.AutoreleasingUnsafeMutablePointer<NaverAdsServices.GFPError?>?, error: NaverAdsServices.GFPError)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func raiseError(errorPtr: Swift.AutoreleasingUnsafeMutablePointer<NaverAdsServices.GFPError?>?, errorCode: Swift.Int, message: Swift.String? = nil)
+  #endif
   @objc deinit
 }
 extension GFPSDK.GFPInspectorInternalLogType : Swift.Equatable {}

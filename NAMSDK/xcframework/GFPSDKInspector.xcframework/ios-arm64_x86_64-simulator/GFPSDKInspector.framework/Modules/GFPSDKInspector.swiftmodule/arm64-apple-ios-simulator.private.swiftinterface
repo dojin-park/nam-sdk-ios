@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name GFPSDKInspector
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name GFPSDKInspector
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import Foundation
 import GFPSDK
 @_exported import GFPSDKInspector
@@ -18,7 +19,9 @@ import _SwiftConcurrencyShims
   public var stringValue: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [GFPSDKInspector.GFPInspectorLogType]
   public typealias RawValue = Swift.Int
   nonisolated public static var allCases: [GFPSDKInspector.GFPInspectorLogType] {
@@ -34,7 +37,9 @@ extension NaverAdsServices.GFPError {
   }
 }
 @_hasMissingDesignatedInitializers public class GFPJSONUtils {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func attributedString(from object: Any, titleFont: UIKit.UIFont = .boldSystemFont(ofSize: 16), valueFont: UIKit.UIFont = .systemFont(ofSize: 14), keyColor: UIKit.UIColor = .label, valueColor: UIKit.UIColor = .label, excludeKeys: [Swift.String : Any] = [:], propertyOrder: [Swift.String]? = nil) -> Foundation.NSAttributedString
+  #endif
   @objc deinit
 }
 @objc @objcMembers public class GFPAdLog : ObjectiveC.NSObject, Swift.Codable {
@@ -60,9 +65,15 @@ extension NaverAdsServices.GFPError {
   @objc public func addError(_ error: NaverAdsServices.GFPError)
   @objc public var cachedParam: GFPSDK.GFPCachedAdParam?
   @objc public init(withLogId logId: Foundation.UUID)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func creativeType() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func providerName() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func isFilled() -> Swift.Bool?
+  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -97,7 +108,9 @@ extension NaverAdsServices.GFPError {
     @objc get
   }
   @objc(addNewAdLogWithLogId:) public func addNewAdLog(logId: Foundation.UUID)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc(adLogForLogId:) public func adLog(forLogId logId: Foundation.UUID) -> GFPSDKInspector.GFPAdLog?
+  #endif
   @objc(logAdViewTypeWith:logId:) public func logAdViewType(with adViewType: Foundation.NSNumber, logId: Foundation.UUID)
   @objc(logAdError:logId:) public func logAdError(_ error: NaverAdsServices.GFPError, logId: Foundation.UUID)
   @objc(logAdView:logId:) public func logAdView(_ adView: UIKit.UIView, logId: Foundation.UUID)
